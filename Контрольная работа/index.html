@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script src="app.js" lang="js">
+   let fso = new ActiveXObject("Scripting.FileSystemObject");
+   let  tf = fso.CreateTextFile("c:\\testfile.txt", true);
+   tf.WriteLine("Testing 1, 2, 3.") // Вставка строки с переносом на новую.
+   tf.WriteBlankLines(3)//Вставка трёх пустых строк
+   tf.Write ("This is a test.")// Вставка новой строки, без переноса.
+   tf.Close()//закрытие файла
+</script>
+</body>
+</html>
