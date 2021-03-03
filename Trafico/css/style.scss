@@ -54,7 +54,7 @@ section.faq {
         padding: 20px;
         min-height: 40px;
         display: flex;
-        // justify-content: center;
+        justify-content: space-between;
         align-items: center;
     }
     
@@ -72,6 +72,10 @@ section.faq {
 
     .faq__item--active .faq__head{
         box-shadow: 0px 20px 40px rgba(238, 77, 71, 0.1) ;
+    }
+
+    .faq__head i{
+
     }
 
 }

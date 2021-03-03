@@ -49,6 +49,7 @@ section.faq .faq__head {
   padding: 20px;
   min-height: 40px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 section.faq .faq__content {

@@ -9,4 +9,5 @@ document.querySelectorAll('.faq__head').forEach((item) =>
             parent.classList.add('faq__item--active');
         }       
     })
+    
 )
