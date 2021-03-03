@@ -54,7 +54,7 @@ P.S. Здесь есть несколько вариантов решения з
         poster.style.backgroundImage='url(img/bg.jpg)'
 
     }
-    const aortArr =(arr) => {
+    const sortArr =(arr) => {
         arr.sort()
     }
 
@@ -65,6 +65,13 @@ parent.innerHTML=''
    ${i+1} ${film}
   <div class="delete"></div>
 </li>`
+ })
+
+ document.querySelectorAll('.delete').forEach((btn,i)=>{
+     btn.addEventListener('click',()=>{
+         btn.parentElement.remove()
+         
+     })
  })
 }
    
