@@ -30,72 +30,75 @@ P.S. Здесь есть несколько вариантов решения з
 'use strict';
 
 // document.addEventListener('DOMContentLoadeed', () => {
-    const movieDB = {
-        movies: [
-            "Логан",
-            "Лига справедливости",
-            "Ла-ла лэнд",
-            "Одержимость",
-            "Скотт Пилигрим против..."
-        ]
-    };
-    const adv = document.querySelectorAll('.promo__adv img');
-    const poster = document.querySelector('.promo__bg');
-    const genre = document.querySelector('.promo__genre');
-    const movieList = document.querySelector('.promo__interactive-list')
-    const addForm = document.querySelector('form.add')
-    const addInput =document.querySelector('.adding__input')
-    const checkBox = document.querySelector('[type="checkbox"]')
+const movieDB = {
+    movies: [
+        "Логан",
+        "Лига справедливости",
+        "Ла-ла лэнд",
+        "Одержимость",
+        "Скотт Пилигрим против..."
+    ]
+};
+const adv = document.querySelectorAll('.promo__adv img');
+const poster = document.querySelector('.promo__bg');
+const genre = document.querySelector('.promo__genre');
+const movieList = document.querySelector('.promo__interactive-list')
+const addForm = document.querySelector('form.add')
+const addInput = document.querySelector('.adding__input')
+const checkBox = document.querySelector('[type="checkbox"]')
 
-    addForm.addEventListener('submit',(e) =>{
-        e.preventDEfualt() //удаляет явное действие (какое-то действие по умолчанию)
-        let newFilm = addInput.value // достаём значение и присваиваем переменной
-        const favorite = checkBox.checked // если галочка есть, то favorite работает
-        if(newFilm){
-            if(newFilm.length> 21)
-            newFilm=`${film.substring(0, 22)}...`//внутри интерполяции мы пишем переменную через $ и ``. Интерполяция - способ добавления информации с помощью переменный
-            // substring обрезает строку 
-        }
-        if(favorite){
+addForm.addEventListener('submit', (e) => {
+    e.preventDEfualt() //удаляет явное действие (какое-то действие по умолчанию)
+    let newFilm = addInput.value // достаём значение и присваиваем переменной
+    const favorite = checkBox.checked // если галочка есть, то favorite работает
+    if (newFilm) {
+        if (newFilm.length > 21){
+            newFilm = `${film.substring(0, 22)}...`}//внутри интерполяции мы пишем переменную через $ и ``. Интерполяция - способ добавления информации с помощью переменный
+        // substring обрезает строку 
+        if (favorite) {
             console.log('Добавляем любимый фильм')
-            movieDB.movies.push(newFilm)
-            sortArr(movieDB.movies)
-            createMovieList(movieDB.movies, movieList)
+    
         }
-    })
-
-    const deleteAdv = (arr) => {
-        arr.forEach(item => {
-            item.remove();
-        });
-    };
-    const makeChange = () => {
-        genre.textContent='драма'
-        poster.style.backgroundImage='url(img/bg.jpg)'
-
     }
-    const sortArr =(arr) => {
-        arr.sort()
-    }
+    movieDB.movies.push(newFilm)
+    sortArr(movieDB.movies)
+    createMovieList(movieDB.movies, movieList)
+  
 
-function createMovieList(films,parent){
-parent.innerHTML=''
-  films.forEach((film,i)=>{
-  parent.innerHTML +=`<li class="promo__interactive-item">
-   ${i+1} ${film}
+})
+
+const deleteAdv = (arr) => {
+    arr.forEach(item => {
+        item.remove();
+    });
+};
+const makeChange = () => {
+    genre.textContent = 'драма'
+    poster.style.backgroundImage = 'url(img/bg.jpg)'
+
+}
+const sortArr = (arr) => {
+    arr.sort()
+}
+
+function createMovieList(films, parent) {
+    parent.innerHTML = ''
+    films.forEach((film, i) => {
+        parent.innerHTML += `<li class="promo__interactive-item">
+   ${i + 1} ${film}
   <div class="delete"></div>
 </li>`
- })
+    })
 
- document.querySelectorAll('.delete').forEach((btn,i)=>{
-     btn.addEventListener('click',()=>{
-         btn.parentElement.remove()
-         
-     })
- })
+    document.querySelectorAll('.delete').forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            btn.parentElement.remove()
+
+        })
+    })
 }
-   
-    deleteAdv(adv);
-    makeChange()
-    createMovieList(movieDB.movies, movieList)
+
+deleteAdv(adv);
+makeChange()
+createMovieList(movieDB.movies, movieList)
 // });
