@@ -43,6 +43,26 @@ P.S. Здесь есть несколько вариантов решения з
     const poster = document.querySelector('.promo__bg');
     const genre = document.querySelector('.promo__genre');
     const movieList = document.querySelector('.promo__interactive-list')
+    const addForm = document.querySelector('form.add')
+    const addInput =document.querySelector('.adding__input')
+    const checkBox = document.querySelector('[type="checkbox"]')
+
+    addForm.addEventListener('submit',(e) =>{
+        e.preventDEfualt() //удаляет явное действие (какое-то действие по умолчанию)
+        let newFilm = addInput.value // достаём значение и присваиваем переменной
+        const favorite = checkBox.checked // если галочка есть, то favorite работает
+        if(newFilm){
+            if(newFilm.length> 21)
+            newFilm=`${film.substring(0, 22)}...`//внутри интерполяции мы пишем переменную через $ и ``. Интерполяция - способ добавления информации с помощью переменный
+            // substring обрезает строку 
+        }
+        if(favorite){
+            console.log('Добавляем любимый фильм')
+            movieDB.movies.push(newFilm)
+            sortArr(movieDB.movies)
+            createMovieList(movieDB.movies, movieList)
+        }
+    })
 
     const deleteAdv = (arr) => {
         arr.forEach(item => {
