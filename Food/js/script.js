@@ -37,50 +37,50 @@ window.addEventListener('DOMContentLoaded', function () {
     })
 
 
-    const  deadline = '2021-03-30'
+    const deadline = '2021-03-30'
 
-    function getTimeRemaining(endtime){
+    function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
-        days = Math.floor((t/(1000*60*60*24))),
-        hours = Math.floor((t/(1000*60*60)% 24)),
-        minutes = Math.floor((t/(1000 * 60) %60)),
-        seconds =Math.floor((t/1000)%60)
+            days = Math.floor((t / (1000 * 60 * 60 * 24))),
+            hours = Math.floor((t / (1000 * 60 * 60) % 24)),
+            minutes = Math.floor((t / (1000 * 60) % 60)),
+            seconds = Math.floor((t / 1000) % 60)
 
         return {
-            'total':t,
-            'days':days,
+            'total': t,
+            'days': days,
             'hours': hours,
-            'minutes':minutes,
-            'seconds':seconds
+            'minutes': minutes,
+            'seconds': seconds
         }
-    } 
-    
-    function getZero(num){
-        if(num>=0 && num< 10){
-            return `0${num}`     
-        }else{
+    }
+
+    function getZero(num) {
+        if (num >= 0 && num < 10) {
+            return `0${num}`
+        } else {
             return num
         }
     }
 
-    function setClock(selector, endtime){
+    function setClock(selector, endtime) {
         const timer = document.querySelector(selector),
-        days = timer.querySelector('#days'),
-        hours = timer.querySelector('#hours'),
-        minutes = timer.querySelector('#minutes'),
-        seconds = timer.querySelector('#seconds'),
-        timeInterval = setInterval(updateClock, 1000)
+            days = timer.querySelector('#days'),
+            hours = timer.querySelector('#hours'),
+            minutes = timer.querySelector('#minutes'),
+            seconds = timer.querySelector('#seconds'),
+            timeInterval = setInterval(updateClock, 1000)
 
         updateClock()
 
-        function updateClock(){
+        function updateClock() {
             const t = getTimeRemaining(endtime)
-            days.innerHTML =getZero(t.days)
+            days.innerHTML = getZero(t.days)
             hours.innerHTML = getZero(t.hours)
-            minutes.innerHTML= getZero(t.minutes)
+            minutes.innerHTML = getZero(t.minutes)
             seconds.innerHTML = getZero(t.seconds)
 
-            if(t.total<=0){
+            if (t.total <= 0) {
                 clearInterval(timeInterval)
             }
         }
@@ -89,51 +89,95 @@ window.addEventListener('DOMContentLoaded', function () {
     setClock('.timer', deadline)
 
     const modalTrigger = document.querySelectorAll('[data-modal]'),
-    modal = document.querySelector('.modal'),
-    modalCloseBtn = document.querySelector('[data-close]')
+        modal = document.querySelector('.modal'),
+        modalCloseBtn = document.querySelector('[data-close]')
 
-    function closeModal(){
+    function closeModal() {
         modal.classList.add('hide')
         modal.classList.remove('show')
-        document.body.style.overflow=''
+        document.body.style.overflow = ''
     }
 
-    function openModal(){
+    function openModal() {
         modal.classList.add('show')
         modal.classList.remove('hide')
-        document.body.style.overflow='hidden'
+        document.body.style.overflow = 'hidden'
         clearTimeout(modalTimerId)
     }
 
-    modalTrigger.forEach(btn =>{
-        btn.addEventListener('click',openModal)
+    modalTrigger.forEach(btn => {
+        btn.addEventListener('click', openModal)
     })
 
     modalCloseBtn.addEventListener('click', closeModal)
 
-    modal.addEventListener('click',(e)=>{
-        if(e.target === modal){
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
             closeModal
         }
     })
 
-    document.addEventListener('keydown',(e)=>{
-        if(e.code ==='Escape' && modal.classList.contains('show')){
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Escape' && modal.classList.contains('show')) {
             closeModal()
         }
     })
 
-    const modalTimerId = setTimeout(openModal,3000)
+    // const modalTimerId = setTimeout(openModal,3000)
 
-    function showModalByScroll(){
-        if(window.pageYOffset
-             + document.documentElement.clientHeight 
-              >= document.documentElement.scrollHeight){
-                  openModal()
-                  window.removeEventListener('scroll', showModalByScroll)
-              }
+    function showModalByScroll() {
+        if (window.pageYOffset
+            + document.documentElement.clientHeight
+            >= document.documentElement.scrollHeight) {
+            openModal()
+            window.removeEventListener('scroll', showModalByScroll)
+        }
     }
 
     window.addEventListener('scroll', showModalByScroll)
+
+
+//Использование класс для сохдания карточек меню
+    class MenuCard {
+        constructor(src, alt, title, descr, price, parentSElector) {
+            this.src = src
+            this.alt = alt
+            this.title = title
+            this.descr = descr
+            this.price = price
+            this.dollar = 2.6
+            this.parent = document.querySelector(parentSElector)
+            this.changePrice()
+        }
+        changePrice() {
+            this.price = this.price * this.dollar
+        }
+        render() {
+            const element = document.createElement('div');
+            element.innerHTML = `
+                <div class="menu__item">
+                    <img src=${this.src} alt=${this.alt}>
+                    <h3 class="menu__item-subtitle">${this.title}</h3>
+                    <div class="menu__item-descr">${this.descr}</div>
+                    <div class="menu__item-divider"></div>
+                    <div class="menu__item-price">
+                        <div class="menu__item-cost">Цена:</div>
+                        <div class="menu__item-total"><span>${this.price}</span> BYN/день</div>
+                    </div>
+                </div>
+            
+            `
+    //Добавлеет елемен в нужное место и сохроняет её
+            this.parent.append(element)
+        }
+    }
+
+    new MenuCard(
+        "img/tabs/vegy.jpg"
+
+    ).render()
 });
-    //когда контент HTML подгрузился
+//когда контент HTML подгрузился
+
+
+
