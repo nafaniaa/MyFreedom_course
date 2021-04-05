@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+}
+.main__header {
+    background-color: #a69785;
+    height: 672px;
+    margin: 0;
+    padding-top: 25px;
+
+    .main__header_title {
+        text-align: center;
+        color: white;
+        
+    }
+
+    .main__header_menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .main__header_link {
+            padding: 25px;
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    .main__header_slider {
+        .slider {
+            width: 440px;
+            height: 494px;
+            margin: 0 10px;
+            border: white solid 5px;
+        }
+    }
+}
+
+.welcome {
+    text-align: center;
+    padding: 110px;
+    background-color: #ccc2b6;
+    .container {
+        .welcome__text {
+            margin: 15px;
+           
+            
+        }
+        .welcome__title {
+            color: #665d52;
+            margin: 15px;
+           
+        }
+        .welcome__description {
+            color: #665d52;
+            margin: 15px;
+            margin-bottom: 30px;
+        }
+        .welcome__link {
+            background-color: #665d52;
+            width: 225px;
+            height: 40px;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: white;
+            
+        }
+    }
+}
