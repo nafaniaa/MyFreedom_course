@@ -1,9 +1,27 @@
-*{
-    margin: 0;
-    font-family: 'Cormorant Garamond', serif;
+@import 'reset.scss';
+
+
+
+body{
+    font-family: 'Tenor Sans', sans-serif;
 }
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+//переменный
+$dark_beige_bg: #a69785;
+$light_beige_bg:#ccc2b6;
+$dark_beige_text:#665d52;
+
+
+//шаблоны
+
+//мексины 
 .main__header {
-    background-color: #a69785;
+    background-color: $dark_beige_bg;
     height: 672px;
     margin: 0;
     padding-top: 25px;
@@ -40,7 +58,7 @@
 .welcome {
     text-align: center;
     padding: 110px;
-    background-color: #ccc2b6;
+    background-color: $light_beige_bg;
     .container {
         .welcome__text {
             margin: 15px;
@@ -48,17 +66,17 @@
             
         }
         .welcome__title {
-            color: #665d52;
+            color: $dark_beige_text;
             margin: 15px;
            
         }
         .welcome__description {
-            color: #665d52;
+            color: $dark_beige_text;
             margin: 15px;
             margin-bottom: 30px;
         }
         .welcome__link {
-            background-color: #665d52;
+            background-color: $dark_beige_text;
             width: 225px;
             height: 40px;
             padding: 5px 10px;
