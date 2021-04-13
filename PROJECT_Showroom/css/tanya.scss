@@ -125,11 +125,16 @@ $dark_beige_text: #665d52;
     }
 }
 
+.space {
+    height: 50px;
+    background-color: $light_beige_bg;
+}
+
 .main__earrings {
     background-color: $light_beige_bg;
     background-image: url(../img_Tanya/earrings_img.jpg);
     background-repeat: no-repeat;
-    background-position: 90% 50%;
+    background-position: 90% 60%;
     background-size: 50%;
     min-height: 576px;
     display: flex;
@@ -156,5 +161,20 @@ $dark_beige_text: #665d52;
                 margin: 15px;
             }
         }
+    }
+}
+
+.originality {
+    background-image: url(../img_Tanya/pexels-anastasia-shuraeva-5705495.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0% 60%;
+    min-height: 586px;
+
+    .originality__text {
+        text-align: center;
+        padding: 250px;
+        font-size: 60px;
+        color: white;
     }
 }

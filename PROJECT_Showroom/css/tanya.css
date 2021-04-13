@@ -444,11 +444,16 @@ body {
   margin: 15px;
 }
 
+.space {
+  height: 50px;
+  background-color: #ccc2b6;
+}
+
 .main__earrings {
   background-color: #ccc2b6;
   background-image: url(../img_Tanya/earrings_img.jpg);
   background-repeat: no-repeat;
-  background-position: 90% 50%;
+  background-position: 90% 60%;
   background-size: 50%;
   min-height: 576px;
   display: flex;
@@ -468,4 +473,18 @@ body {
 }
 .main__earrings .earrings__description .main__card_earrings .earrings__main_link {
   margin: 15px;
+}
+
+.originality {
+  background-image: url(../img_Tanya/pexels-anastasia-shuraeva-5705495.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0% 60%;
+  min-height: 586px;
+}
+.originality .originality__text {
+  text-align: center;
+  padding: 250px;
+  font-size: 60px;
+  color: white;
 }
