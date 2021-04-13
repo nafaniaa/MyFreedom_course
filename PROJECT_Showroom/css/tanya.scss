@@ -1,27 +1,43 @@
-@import 'reset.scss';
+@import "reset.scss";
 
-
-
-body{
-    font-family: 'Tenor Sans', sans-serif;
+body {
+    font-family: "Tenor Sans", sans-serif;
 }
 
-.container{
+.container {
     max-width: 1000px;
     margin: 0 auto;
 }
 
 //переменный
 $dark_beige_bg: #a69785;
-$light_beige_bg:#ccc2b6;
-$dark_beige_text:#665d52;
-
+$light_beige_bg: #ccc2b6;
+$dark_beige_text: #665d52;
 
 //шаблоны
 
-//мексины 
+%main-link {
+    background-color: $dark_beige_text;
+    width: 225px;
+    height: 40px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+}
+
+%main-text {
+    color: $dark_beige_text;
+    margin: 15px;
+    margin-bottom: 30px;
+}
+
+%main-title {
+    color: $dark_beige_text;
+    margin: 15px;
+}
+//мексины
 .main__header {
-    background-color: $dark_beige_bg;
+    background: linear-gradient(to bottom, $dark_beige_bg 50%, $light_beige_bg 50%);
     height: 672px;
     margin: 0;
     padding-top: 25px;
@@ -29,7 +45,7 @@ $dark_beige_text:#665d52;
     .main__header_title {
         text-align: center;
         color: white;
-        
+        font-size: 50px;
     }
 
     .main__header_menu {
@@ -59,30 +75,86 @@ $dark_beige_text:#665d52;
     text-align: center;
     padding: 110px;
     background-color: $light_beige_bg;
+
     .container {
         .welcome__text {
             margin: 15px;
-           
-            
         }
         .welcome__title {
-            color: $dark_beige_text;
-            margin: 15px;
-           
+            @extend %main-title;
+            font-size: 30px;
         }
         .welcome__description {
-            color: $dark_beige_text;
-            margin: 15px;
-            margin-bottom: 30px;
+            @extend %main-text;
         }
         .welcome__link {
-            background-color: $dark_beige_text;
-            width: 225px;
-            height: 40px;
-            padding: 5px 10px;
-            text-decoration: none;
-            color: white;
-            
+            @extend %main-link;
+        }
+    }
+}
+
+.main__rings {
+    background-color: $light_beige_bg;
+    background-image: url(../img_Tanya/img_rings.jpg);
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+    background-size: 50%;
+    min-height: 576px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    .rings__description {
+        min-width: 700px;
+        .main__card_rings {
+            padding: 50px 25px;
+            background: white;
+            width: 600px;
+            .rings__main_title {
+                @extend %main-title;
+            }
+            .rings__main_text {
+                @extend %main-text;
+            }
+            .rings__main_link {
+                @extend %main-link;
+                margin: 15px;
+            }
+        }
+    }
+}
+
+.main__earrings {
+    background-color: $light_beige_bg;
+    background-image: url(../img_Tanya/earrings_img.jpg);
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    background-size: 50%;
+    min-height: 576px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    .earrings__description {
+        min-width: 700px;
+        display: flex;
+        justify-content: flex-end;
+        .main__card_earrings {
+            padding: 50px 25px;
+            background: white;
+            width: 600px;
+            .earrings__main_title {
+                @extend %main-title;
+            }
+            .earrings__main_text {
+                @extend %main-text;
+            }
+            .earrings__main_link {
+                @extend %main-link;
+                margin: 15px;
+            }
         }
     }
 }
