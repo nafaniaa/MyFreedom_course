@@ -23,6 +23,7 @@ $dark_beige_text: #665d52;
     padding: 5px 10px;
     text-decoration: none;
     color: white;
+    
 }
 
 %main-text {
@@ -178,3 +179,93 @@ $dark_beige_text: #665d52;
         color: white;
     }
 }
+
+.about_me {
+    min-height: 600px;
+    background: linear-gradient(to right, $dark_beige_bg 50%, $light_beige_bg 50%);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .img__about_me {
+        width: 480px;
+        height: 500px;
+        border: white solid 10px;
+    }
+
+    .information__about_me {
+        height: 350px;
+        width: 470px;
+        padding: 50px;
+        padding-top: 100px;
+
+        .title__about_me {
+            @extend %main-title;
+            font-size: 30px;
+            margin: 35px;
+        }
+
+        .text__about_me {
+            @extend %main-text;
+            margin: 35px;
+        }
+
+        .link__about_me {
+            @extend %main-link;
+            margin: 35px;
+        }
+    }
+}
+
+.end_cards {
+    min-height: 600px;
+    background-color: $light_beige_bg;
+    padding-top: 30px;
+    .p__title{
+        text-align: center;
+        color: $dark_beige_text;
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+    .title__end_cards{
+        text-align: center;
+        color: $dark_beige_text;
+        font-size: 40px;
+        padding-bottom: 20px;
+    }
+    .blocks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+
+        .one_block{
+            width: 230px;
+            
+            .img__end_cards{
+                width: 230px;
+                max-height: 500px;
+                border: white solid 5px;
+            }
+
+            .text__end_cards{
+                color: $dark_beige_text;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+            .link__end_cards{
+                text-decoration: none;
+                color: #402e2d;
+            
+                .fas{
+                    margin-left: 5px;
+                    color: #402e2d;
+                }
+            }
+        }
+    }
+}
+

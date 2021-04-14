@@ -360,7 +360,7 @@ body {
   margin: 0 auto;
 }
 
-.main__earrings .earrings__description .main__card_earrings .earrings__main_link, .main__rings .rings__description .main__card_rings .rings__main_link, .welcome .container .welcome__link {
+.about_me .information__about_me .link__about_me, .main__earrings .earrings__description .main__card_earrings .earrings__main_link, .main__rings .rings__description .main__card_rings .rings__main_link, .welcome .container .welcome__link {
   background-color: #665d52;
   width: 225px;
   height: 40px;
@@ -369,13 +369,13 @@ body {
   color: white;
 }
 
-.main__earrings .earrings__description .main__card_earrings .earrings__main_text, .main__rings .rings__description .main__card_rings .rings__main_text, .welcome .container .welcome__description {
+.about_me .information__about_me .text__about_me, .main__earrings .earrings__description .main__card_earrings .earrings__main_text, .main__rings .rings__description .main__card_rings .rings__main_text, .welcome .container .welcome__description {
   color: #665d52;
   margin: 15px;
   margin-bottom: 30px;
 }
 
-.main__earrings .earrings__description .main__card_earrings .earrings__main_title, .main__rings .rings__description .main__card_rings .rings__main_title, .welcome .container .welcome__title {
+.about_me .information__about_me .title__about_me, .main__earrings .earrings__description .main__card_earrings .earrings__main_title, .main__rings .rings__description .main__card_rings .rings__main_title, .welcome .container .welcome__title {
   color: #665d52;
   margin: 15px;
 }
@@ -487,4 +487,80 @@ body {
   padding: 250px;
   font-size: 60px;
   color: white;
+}
+
+.about_me {
+  min-height: 600px;
+  background: linear-gradient(to right, #a69785 50%, #ccc2b6 50%);
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.about_me .img__about_me {
+  width: 480px;
+  height: 500px;
+  border: white solid 10px;
+}
+.about_me .information__about_me {
+  height: 350px;
+  width: 470px;
+  padding: 50px;
+  padding-top: 100px;
+}
+.about_me .information__about_me .title__about_me {
+  font-size: 30px;
+  margin: 35px;
+}
+.about_me .information__about_me .text__about_me {
+  margin: 35px;
+}
+.about_me .information__about_me .link__about_me {
+  margin: 35px;
+}
+
+.end_cards {
+  min-height: 600px;
+  background-color: #ccc2b6;
+  padding-top: 30px;
+}
+.end_cards .p__title {
+  text-align: center;
+  color: #665d52;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+.end_cards .title__end_cards {
+  text-align: center;
+  color: #665d52;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+.end_cards .blocks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.end_cards .blocks .one_block {
+  width: 230px;
+}
+.end_cards .blocks .one_block .img__end_cards {
+  width: 230px;
+  max-height: 500px;
+  border: white solid 5px;
+}
+.end_cards .blocks .one_block .text__end_cards {
+  color: #665d52;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.end_cards .blocks .one_block .link__end_cards {
+  text-decoration: none;
+  color: #402e2d;
+}
+.end_cards .blocks .one_block .link__end_cards .fas {
+  margin-left: 5px;
+  color: #402e2d;
 }
