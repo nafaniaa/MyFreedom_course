@@ -1,0 +1,32 @@
+.wrapper {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.slider-container {
+    background: lightcoral;
+    overflow: hidden;
+}
+
+.slider-track {
+    background: lightseagreen;
+    display: flex;
+    transition: 1s;
+}
+
+.slider-item {
+    height: 100px;
+}
+
+.slider-item:nth-child(odd) {
+    background: maroon;
+}
+.slider-item:nth-child(even) {
+    background: black;
+}
+
+.slider-buttons {
+    text-align: center;
+}
+
+
