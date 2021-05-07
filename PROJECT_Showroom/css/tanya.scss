@@ -1,5 +1,23 @@
 @import "reset.scss";
 
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+  }
+  @mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  }
+  @mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+  }
+  @mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
+
+
+
 body {
     font-family: "Tenor Sans", sans-serif;
 }
@@ -38,7 +56,7 @@ $dark_beige_text: #665d52;
 //мексины
 .main__header {
     background: linear-gradient(to bottom, $dark_beige_bg 50%, $light_beige_bg 50%);
-    height: 672px;
+   max-height: 672px;
     margin: 0;
     padding-top: 25px;
 
@@ -53,6 +71,7 @@ $dark_beige_text: #665d52;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
 
         .main__header_link {
             padding: 25px;
@@ -63,34 +82,33 @@ $dark_beige_text: #665d52;
 
     .main__header_slider {
         min-height: 600px;
+        @include for-phone-only {
+            display: none;
+        }
         .wrapper {
             min-width: 1000px;
-            
+
             margin: 0 auto;
         }
-        
+
         .slider-container {
-         
             overflow: hidden;
         }
-        
+
         .slider-track {
-            
             display: flex;
             transition: 2s;
         }
-        
+
         .slider-item {
             height: 600px;
             .slider {
                 width: 440px;
-                height: 494px;
+                width: 494px;
                 margin: 0 10px;
                 border: white solid 5px;
             }
         }
-        
-        
     }
 }
 
@@ -98,6 +116,9 @@ $dark_beige_text: #665d52;
     text-align: center;
     padding: 110px;
     background-color: $light_beige_bg;
+    @include for-phone-only {
+        padding: 20px;
+    }
 
     .container {
         .welcome__text {
@@ -169,10 +190,17 @@ $dark_beige_text: #665d52;
         min-width: 700px;
         display: flex;
         justify-content: flex-end;
+        @include for-phone-only {
+            min-width: 100%;
+        }
         .main__card_earrings {
             padding: 50px 25px;
             background: white;
-            width: 600px;
+            max-width: 600px;
+
+            // @include for-phone-only {
+            //     min-width: 100%;
+            // }
             .earrings__main_title {
                 @extend %main-title;
             }
@@ -193,6 +221,9 @@ $dark_beige_text: #665d52;
     background-size: 100%;
     background-position: 0% 60%;
     min-height: 586px;
+    @include for-phone-only {
+        display: none;
+    }
 
     .originality__text {
         text-align: center;
@@ -210,11 +241,19 @@ $dark_beige_text: #665d52;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+@include for-phone-only {
+    background:$light_beige_bg;
+}
 
     .img__about_me {
         width: 480px;
         height: 500px;
         border: white solid 10px;
+        @include for-phone-only {
+            width: 300px;
+            height: 100%;
+        }
     }
 
     .information__about_me {
@@ -262,6 +301,7 @@ $dark_beige_text: #665d52;
         flex-direction: row;
         justify-content: space-around;
         align-items: flex-start;
+        flex-wrap: wrap;
 
         .one_block {
             width: 230px;
@@ -301,6 +341,7 @@ $dark_beige_text: #665d52;
         flex-direction: row;
         justify-content: space-around;
         align-items: flex-start;
+        flex-wrap: wrap;
 
         .column {
             text-align: center;
@@ -309,11 +350,12 @@ $dark_beige_text: #665d52;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            .footer__logo{
+            .footer__logo {
                 width: 200px;
-                height: 200px;
+                height: 80px;
+                margin: 15px;
             }
-            #footer__p{
+            #footer__p {
                 font-size: 10px;
             }
             .footer__text {
@@ -321,21 +363,21 @@ $dark_beige_text: #665d52;
                 padding: 10px;
             }
 
-            .footer__link{
+            .footer__link {
                 padding: 10px;
                 color: white;
                 font-size: 12px;
             }
 
-            form{
+            form {
                 padding: 10px;
-                input{
+                input {
                     width: 135px;
                     height: 30px;
                     padding-left: 10px;
                     border: white;
                 }
-                button{
+                button {
                     height: 32px;
                     background-color: $light_beige_bg;
                     color: $dark_beige_text;
@@ -345,14 +387,13 @@ $dark_beige_text: #665d52;
         }
     }
 
-    hr{
+    hr {
         max-width: 900px;
     }
 
-    .footer__text2{
+    .footer__text2 {
         color: white;
         text-align: center;
         padding: 20px;
-       
     }
 }

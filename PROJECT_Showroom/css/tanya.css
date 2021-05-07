@@ -351,6 +351,21 @@ textarea {
   padding: 0.2em 0;
 }
 
+@media only screen and (max-width: 768px) {
+  body {
+    min-width: 1500px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  body {
+    min-width: 1700px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  body {
+    min-width: 1200px;
+  }
+}
 body {
   font-family: "Tenor Sans", sans-serif;
 }
@@ -603,7 +618,8 @@ body {
 }
 .main__footer .footer__container .column .footer__logo {
   width: 200px;
-  height: 200px;
+  height: 80px;
+  margin: 15px;
 }
 .main__footer .footer__container .column #footer__p {
   font-size: 10px;
