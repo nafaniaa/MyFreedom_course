@@ -351,21 +351,6 @@ textarea {
   padding: 0.2em 0;
 }
 
-@media only screen and (max-width: 768px) {
-  body {
-    min-width: 1500px;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  body {
-    min-width: 1700px;
-  }
-}
-@media only screen and (max-width: 320px) {
-  body {
-    min-width: 1200px;
-  }
-}
 body {
   font-family: "Tenor Sans", sans-serif;
 }
@@ -397,7 +382,7 @@ body {
 
 .main__header {
   background: linear-gradient(to bottom, #a69785 50%, #ccc2b6 50%);
-  height: 672px;
+  max-height: 672px;
   margin: 0;
   padding-top: 25px;
 }
@@ -411,6 +396,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 .main__header .main__header_menu .main__header_link {
   padding: 25px;
@@ -419,6 +405,11 @@ body {
 }
 .main__header .main__header_slider {
   min-height: 600px;
+}
+@media (max-width: 599px) {
+  .main__header .main__header_slider {
+    display: none;
+  }
 }
 .main__header .main__header_slider .wrapper {
   min-width: 1000px;
@@ -436,7 +427,7 @@ body {
 }
 .main__header .main__header_slider .slider-item .slider {
   width: 440px;
-  height: 494px;
+  width: 494px;
   margin: 0 10px;
   border: white solid 5px;
 }
@@ -445,6 +436,11 @@ body {
   text-align: center;
   padding: 110px;
   background-color: #ccc2b6;
+}
+@media (max-width: 599px) {
+  .welcome {
+    padding: 20px;
+  }
 }
 .welcome .container .welcome__text {
   margin: 15px;
@@ -498,10 +494,15 @@ body {
   display: flex;
   justify-content: flex-end;
 }
+@media (max-width: 599px) {
+  .main__earrings .earrings__description {
+    min-width: 100%;
+  }
+}
 .main__earrings .earrings__description .main__card_earrings {
   padding: 50px 25px;
   background: white;
-  width: 600px;
+  max-width: 600px;
 }
 .main__earrings .earrings__description .main__card_earrings .earrings__main_link {
   margin: 15px;
@@ -513,6 +514,11 @@ body {
   background-size: 100%;
   background-position: 0% 60%;
   min-height: 586px;
+}
+@media (max-width: 599px) {
+  .originality {
+    display: none;
+  }
 }
 .originality .originality__text {
   text-align: center;
@@ -529,11 +535,23 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 599px) {
+  .about_me {
+    background: #ccc2b6;
+  }
 }
 .about_me .img__about_me {
   width: 480px;
   height: 500px;
   border: white solid 10px;
+}
+@media (max-width: 599px) {
+  .about_me .img__about_me {
+    width: 300px;
+    height: 100%;
+  }
 }
 .about_me .information__about_me {
   height: 350px;
@@ -574,6 +592,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 .end_cards .blocks .one_block {
   width: 230px;
@@ -607,6 +626,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 .main__footer .footer__container .column {
   text-align: center;
