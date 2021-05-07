@@ -1,21 +1,30 @@
 @import "reset.scss";
 
 @mixin for-phone-only {
-    @media (max-width: 599px) { @content; }
-  }
-  @mixin for-tablet-portrait-up {
-    @media (min-width: 600px) { @content; }
-  }
-  @mixin for-tablet-landscape-up {
-    @media (min-width: 900px) { @content; }
-  }
-  @mixin for-desktop-up {
-    @media (min-width: 1200px) { @content; }
-  }
-  @mixin for-big-desktop-up {
-    @media (min-width: 1800px) { @content; }
-  }
-
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
 
 body {
     font-family: "Tenor Sans", sans-serif;
@@ -40,6 +49,11 @@ $dark_beige_text: #665d52;
     padding: 5px 10px;
     text-decoration: none;
     color: white;
+    &:hover{
+        background-color: $light_beige_bg;
+        border: 1px solid $dark_beige_text;
+        color: $dark_beige_text;
+    }
 }
 
 %main-text {
@@ -55,9 +69,12 @@ $dark_beige_text: #665d52;
 //мексины
 .main__header {
     background: linear-gradient(to bottom, $dark_beige_bg 50%, $light_beige_bg 50%);
-   max-height: 672px;
+    max-height: 672px;
     margin: 0;
     padding-top: 25px;
+    @include for-phone-only() {
+        background: $dark_beige_bg;
+    }
 
     .main__header_title {
         text-align: center;
@@ -76,18 +93,30 @@ $dark_beige_text: #665d52;
             padding: 25px;
             text-decoration: none;
             color: white;
+            &:hover{
+                text-decoration: underline;
+            }
         }
     }
 
     .main__header_slider {
         min-height: 600px;
-        @include for-phone-only {
+        @include for-phone-only() {
             display: none;
         }
+
         .wrapper {
             min-width: 1000px;
-
             margin: 0 auto;
+            @include for-tablet-portrait-up() {
+                min-width: 600px;
+            }
+            @include for-tablet-landscape-up() {
+                min-width: 900px;
+            }
+            @include for-desktop-up() {
+                min-width: 1200px;
+            }
         }
 
         .slider-container {
@@ -103,9 +132,21 @@ $dark_beige_text: #665d52;
             height: 600px;
             .slider {
                 width: 440px;
-                width: 494px;
+                height: 494px;
                 margin: 0 10px;
                 border: white solid 5px;
+                @include for-tablet-portrait-up() {
+                    width: 220px;
+                    height: 360px;
+                }
+                @include for-tablet-landscape-up() {
+                    width: 400px;
+                    height: 454px;
+                }
+                @include for-desktop-up() {
+                    width: 440px;
+                    height: 520px;
+                }
             }
         }
     }
@@ -115,7 +156,7 @@ $dark_beige_text: #665d52;
     text-align: center;
     padding: 110px;
     background-color: $light_beige_bg;
-    @include for-phone-only {
+    @include for-phone-only() {
         padding: 20px;
     }
 
@@ -147,13 +188,41 @@ $dark_beige_text: #665d52;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    @include for-phone-only() {
+        background-image: none;
+        min-height: 300px;
+    }
+    @include for-tablet-portrait-up() {
+        background-image: none;
+        min-height: 300px;
+    }
+    @include for-tablet-landscape-up() {
+        background-image: url(../img_Tanya/img_rings.jpg);
+        min-height: 400px;
+    }
+    @include for-desktop-up() {
+        min-height: 576px;
+    }
 
     .rings__description {
-        min-width: 700px;
+        min-width: 60%;
+        @include for-phone-only() {
+            min-width: 100%;
+        }
+        @include for-tablet-portrait-up() {
+            min-width: 100%;
+        }
+        @include for-tablet-landscape-up() {
+            min-width: 75%;
+        }
+
+        @include for-desktop-up() {
+            min-width: 60%;
+        }
         .main__card_rings {
             padding: 50px 25px;
             background: white;
-            width: 600px;
+            max-width: 600px;
             .rings__main_title {
                 @extend %main-title;
             }
@@ -171,6 +240,16 @@ $dark_beige_text: #665d52;
 .space {
     height: 50px;
     background-color: $light_beige_bg;
+    @include for-phone-only() {
+        display: none;
+    }
+
+    @include for-tablet-portrait-up() {
+        display: none;
+    }
+    @include for-tablet-landscape-up() {
+        display: block;
+    }
 }
 
 .main__earrings {
@@ -184,13 +263,37 @@ $dark_beige_text: #665d52;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    @include for-phone-only() {
+        background-image: none;
+        min-height: 300px;
+    }
+    @include for-tablet-portrait-up() {
+        background-image: none;
+        min-height: 300px;
+    }
+    @include for-tablet-landscape-up() {
+        background-image: url(../img_Tanya/earrings_img.jpg);
+        min-height: 400px;
+    }
+    @include for-desktop-up() {
+        min-height: 576px;
+    }
 
     .earrings__description {
-        min-width: 700px;
+        min-width: 60%;
         display: flex;
         justify-content: flex-end;
         @include for-phone-only {
             min-width: 100%;
+        }
+        @include for-tablet-portrait-up() {
+            min-width: 100%;
+        }
+        @include for-tablet-landscape-up() {
+            min-width: 75%;
+        }
+        @include for-tablet-landscape-up() {
+            min-width: 60%;
         }
         .main__card_earrings {
             padding: 50px 25px;
@@ -220,15 +323,27 @@ $dark_beige_text: #665d52;
     background-size: 100%;
     background-position: 0% 60%;
     min-height: 586px;
-    @include for-phone-only {
+    @include for-phone-only() {
         display: none;
+    }
+    @include for-tablet-portrait-up() {
+        min-height: 400px;
+    }
+    @include for-desktop-up() {
+        min-height: 586px;
     }
 
     .originality__text {
         text-align: center;
-        padding: 250px;
+        padding-top: 250px;
         font-size: 60px;
         color: white;
+        @include for-tablet-portrait-up() {
+            padding-top: 120px;
+        }
+        @include for-desktop-up() {
+            padding-top: 250px;
+        }
     }
 }
 
@@ -241,17 +356,35 @@ $dark_beige_text: #665d52;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-@include for-phone-only {
-    background:$light_beige_bg;
-}
+    @include for-phone-only() {
+        background: $light_beige_bg;
+    }
 
+    @include for-tablet-portrait-up() {
+        background: $light_beige_bg;
+        padding-top: 40px;
+    }
+    @include for-tablet-landscape-up() {
+        background: linear-gradient(to right, $dark_beige_bg 50%, $light_beige_bg 50%);
+    }
+    @include for-tablet-landscape-up() {
+        flex-wrap: nowrap;
+    }
     .img__about_me {
         width: 480px;
         height: 500px;
         border: white solid 10px;
-        @include for-phone-only {
+        @include for-phone-only() {
             width: 300px;
             height: 100%;
+        }
+        @include for-tablet-landscape-up() {
+            width: 380px;
+            height: 450px;
+        }
+        @include for-desktop-up() {
+            width: 480px;
+            height: 500px;
         }
     }
 
@@ -260,6 +393,10 @@ $dark_beige_text: #665d52;
         width: 470px;
         padding: 50px;
         padding-top: 100px;
+        @include for-phone-only() {
+            min-width: 300px;
+            padding: 0;
+        }
 
         .title__about_me {
             @extend %main-title;
@@ -283,6 +420,7 @@ $dark_beige_text: #665d52;
     min-height: 600px;
     background-color: $light_beige_bg;
     padding-top: 30px;
+
     .p__title {
         text-align: center;
         color: $dark_beige_text;
@@ -301,9 +439,19 @@ $dark_beige_text: #665d52;
         justify-content: space-around;
         align-items: flex-start;
         flex-wrap: wrap;
+        // @include for-desktop-up(){
+        //     flex-wrap: nowrap;
+        // }
+        
 
         .one_block {
             width: 230px;
+            @include for-tablet-portrait-up() {
+                margin: 20px;
+            }
+            @include for-desktop-up(){
+                margin: 10px;
+            }
 
             .img__end_cards {
                 width: 230px;
@@ -320,6 +468,9 @@ $dark_beige_text: #665d52;
             .link__end_cards {
                 text-decoration: none;
                 color: #402e2d;
+                &:hover{
+                    text-decoration:underline;
+                }
 
                 .fas {
                     margin-left: 5px;
@@ -381,6 +532,10 @@ $dark_beige_text: #665d52;
                     background-color: $light_beige_bg;
                     color: $dark_beige_text;
                     border: none;
+                    &:hover{
+                        background-color: $dark_beige_text;
+                        color: $light_beige_bg;
+                    }
                 }
             }
         }

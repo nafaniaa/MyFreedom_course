@@ -368,6 +368,11 @@ body {
   text-decoration: none;
   color: white;
 }
+.about_me .information__about_me .link__about_me:hover, .main__earrings .earrings__description .main__card_earrings .earrings__main_link:hover, .main__rings .rings__description .main__card_rings .rings__main_link:hover, .welcome .container .welcome__link:hover {
+  background-color: #ccc2b6;
+  border: 1px solid #665d52;
+  color: #665d52;
+}
 
 .about_me .information__about_me .text__about_me, .main__earrings .earrings__description .main__card_earrings .earrings__main_text, .main__rings .rings__description .main__card_rings .rings__main_text, .welcome .container .welcome__description {
   color: #665d52;
@@ -386,6 +391,11 @@ body {
   margin: 0;
   padding-top: 25px;
 }
+@media (max-width: 599px) {
+  .main__header {
+    background: #a69785;
+  }
+}
 .main__header .main__header_title {
   text-align: center;
   color: white;
@@ -403,6 +413,9 @@ body {
   text-decoration: none;
   color: white;
 }
+.main__header .main__header_menu .main__header_link:hover {
+  text-decoration: underline;
+}
 .main__header .main__header_slider {
   min-height: 600px;
 }
@@ -414,6 +427,21 @@ body {
 .main__header .main__header_slider .wrapper {
   min-width: 1000px;
   margin: 0 auto;
+}
+@media (min-width: 600px) {
+  .main__header .main__header_slider .wrapper {
+    min-width: 600px;
+  }
+}
+@media (min-width: 900px) {
+  .main__header .main__header_slider .wrapper {
+    min-width: 900px;
+  }
+}
+@media (min-width: 1200px) {
+  .main__header .main__header_slider .wrapper {
+    min-width: 1200px;
+  }
 }
 .main__header .main__header_slider .slider-container {
   overflow: hidden;
@@ -427,9 +455,27 @@ body {
 }
 .main__header .main__header_slider .slider-item .slider {
   width: 440px;
-  width: 494px;
+  height: 494px;
   margin: 0 10px;
   border: white solid 5px;
+}
+@media (min-width: 600px) {
+  .main__header .main__header_slider .slider-item .slider {
+    width: 220px;
+    height: 360px;
+  }
+}
+@media (min-width: 900px) {
+  .main__header .main__header_slider .slider-item .slider {
+    width: 400px;
+    height: 454px;
+  }
+}
+@media (min-width: 1200px) {
+  .main__header .main__header_slider .slider-item .slider {
+    width: 440px;
+    height: 520px;
+  }
 }
 
 .welcome {
@@ -460,13 +506,56 @@ body {
   justify-content: flex-end;
   align-items: center;
 }
+@media (max-width: 599px) {
+  .main__rings {
+    background-image: none;
+    min-height: 300px;
+  }
+}
+@media (min-width: 600px) {
+  .main__rings {
+    background-image: none;
+    min-height: 300px;
+  }
+}
+@media (min-width: 900px) {
+  .main__rings {
+    background-image: url(../img_Tanya/img_rings.jpg);
+    min-height: 400px;
+  }
+}
+@media (min-width: 1200px) {
+  .main__rings {
+    min-height: 576px;
+  }
+}
 .main__rings .rings__description {
-  min-width: 700px;
+  min-width: 60%;
+}
+@media (max-width: 599px) {
+  .main__rings .rings__description {
+    min-width: 100%;
+  }
+}
+@media (min-width: 600px) {
+  .main__rings .rings__description {
+    min-width: 100%;
+  }
+}
+@media (min-width: 900px) {
+  .main__rings .rings__description {
+    min-width: 75%;
+  }
+}
+@media (min-width: 1200px) {
+  .main__rings .rings__description {
+    min-width: 60%;
+  }
 }
 .main__rings .rings__description .main__card_rings {
   padding: 50px 25px;
   background: white;
-  width: 600px;
+  max-width: 600px;
 }
 .main__rings .rings__description .main__card_rings .rings__main_link {
   margin: 15px;
@@ -475,6 +564,21 @@ body {
 .space {
   height: 50px;
   background-color: #ccc2b6;
+}
+@media (max-width: 599px) {
+  .space {
+    display: none;
+  }
+}
+@media (min-width: 600px) {
+  .space {
+    display: none;
+  }
+}
+@media (min-width: 900px) {
+  .space {
+    display: block;
+  }
 }
 
 .main__earrings {
@@ -489,14 +593,52 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
+@media (max-width: 599px) {
+  .main__earrings {
+    background-image: none;
+    min-height: 300px;
+  }
+}
+@media (min-width: 600px) {
+  .main__earrings {
+    background-image: none;
+    min-height: 300px;
+  }
+}
+@media (min-width: 900px) {
+  .main__earrings {
+    background-image: url(../img_Tanya/earrings_img.jpg);
+    min-height: 400px;
+  }
+}
+@media (min-width: 1200px) {
+  .main__earrings {
+    min-height: 576px;
+  }
+}
 .main__earrings .earrings__description {
-  min-width: 700px;
+  min-width: 60%;
   display: flex;
   justify-content: flex-end;
 }
 @media (max-width: 599px) {
   .main__earrings .earrings__description {
     min-width: 100%;
+  }
+}
+@media (min-width: 600px) {
+  .main__earrings .earrings__description {
+    min-width: 100%;
+  }
+}
+@media (min-width: 900px) {
+  .main__earrings .earrings__description {
+    min-width: 75%;
+  }
+}
+@media (min-width: 900px) {
+  .main__earrings .earrings__description {
+    min-width: 60%;
   }
 }
 .main__earrings .earrings__description .main__card_earrings {
@@ -520,11 +662,31 @@ body {
     display: none;
   }
 }
+@media (min-width: 600px) {
+  .originality {
+    min-height: 400px;
+  }
+}
+@media (min-width: 1200px) {
+  .originality {
+    min-height: 586px;
+  }
+}
 .originality .originality__text {
   text-align: center;
-  padding: 250px;
+  padding-top: 250px;
   font-size: 60px;
   color: white;
+}
+@media (min-width: 600px) {
+  .originality .originality__text {
+    padding-top: 120px;
+  }
+}
+@media (min-width: 1200px) {
+  .originality .originality__text {
+    padding-top: 250px;
+  }
 }
 
 .about_me {
@@ -542,6 +704,22 @@ body {
     background: #ccc2b6;
   }
 }
+@media (min-width: 600px) {
+  .about_me {
+    background: #ccc2b6;
+    padding-top: 40px;
+  }
+}
+@media (min-width: 900px) {
+  .about_me {
+    background: linear-gradient(to right, #a69785 50%, #ccc2b6 50%);
+  }
+}
+@media (min-width: 900px) {
+  .about_me {
+    flex-wrap: nowrap;
+  }
+}
 .about_me .img__about_me {
   width: 480px;
   height: 500px;
@@ -553,11 +731,29 @@ body {
     height: 100%;
   }
 }
+@media (min-width: 900px) {
+  .about_me .img__about_me {
+    width: 380px;
+    height: 450px;
+  }
+}
+@media (min-width: 1200px) {
+  .about_me .img__about_me {
+    width: 480px;
+    height: 500px;
+  }
+}
 .about_me .information__about_me {
   height: 350px;
   width: 470px;
   padding: 50px;
   padding-top: 100px;
+}
+@media (max-width: 599px) {
+  .about_me .information__about_me {
+    min-width: 300px;
+    padding: 0;
+  }
 }
 .about_me .information__about_me .title__about_me {
   font-size: 30px;
@@ -597,6 +793,16 @@ body {
 .end_cards .blocks .one_block {
   width: 230px;
 }
+@media (min-width: 600px) {
+  .end_cards .blocks .one_block {
+    margin: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .end_cards .blocks .one_block {
+    margin: 10px;
+  }
+}
 .end_cards .blocks .one_block .img__end_cards {
   width: 230px;
   max-height: 500px;
@@ -610,6 +816,9 @@ body {
 .end_cards .blocks .one_block .link__end_cards {
   text-decoration: none;
   color: #402e2d;
+}
+.end_cards .blocks .one_block .link__end_cards:hover {
+  text-decoration: underline;
 }
 .end_cards .blocks .one_block .link__end_cards .fas {
   margin-left: 5px;
@@ -667,6 +876,10 @@ body {
   background-color: #ccc2b6;
   color: #665d52;
   border: none;
+}
+.main__footer .footer__container .column form button:hover {
+  background-color: #665d52;
+  color: #ccc2b6;
 }
 .main__footer hr {
   max-width: 900px;
