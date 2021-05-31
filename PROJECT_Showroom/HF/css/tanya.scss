@@ -1,0 +1,632 @@
+@import "reset.scss";
+
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
+
+body {
+    font-family: "Tenor Sans", sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+//переменный
+$dark_beige_bg: #a69785;
+$light_beige_bg: #ccc2b6;
+$dark_beige_text: #665d52;
+
+//шаблоны
+
+%main-link {
+    background-color: $dark_beige_text;
+    width: 225px;
+    height: 40px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    &:hover{
+        background-color: $light_beige_bg;
+        border: 1px solid $dark_beige_text;
+        color: $dark_beige_text;
+    }
+}
+
+%main-text {
+    color: $dark_beige_text;
+    margin: 15px;
+    margin-bottom: 30px;
+}
+
+%main-title {
+    color: $dark_beige_text;
+    margin: 15px;
+}
+//мексины
+.main__header {
+    background: linear-gradient(to bottom, $dark_beige_bg 50%, $light_beige_bg 50%);
+    max-height: 672px;
+    margin: 0;
+    padding-top: 25px;
+    @include for-phone-only() {
+        background: $dark_beige_bg;
+    }
+
+    .main__header_title {
+        text-align: center;
+        color: white;
+        font-size: 50px;
+    }
+
+    .main__header_menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .main__header_link {
+            padding: 25px;
+            text-decoration: none;
+            color: white;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .main__header_slider {
+        min-height: 600px;
+        @include for-phone-only() {
+            display: none;
+        }
+
+        .wrapper {
+            min-width: 1000px;
+            margin: 0 auto;
+            @include for-tablet-portrait-up() {
+                min-width: 600px;
+            }
+            @include for-tablet-landscape-up() {
+                min-width: 900px;
+            }
+            @include for-desktop-up() {
+                min-width: 1200px;
+            }
+        }
+
+        .slider-container {
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: 2s;
+        }
+
+        .slider-item {
+            height: 600px;
+            .slider {
+                width: 440px;
+                height: 494px;
+                margin: 0 10px;
+                border: white solid 5px;
+                @include for-tablet-portrait-up() {
+                    width: 220px;
+                    height: 360px;
+                }
+                @include for-tablet-landscape-up() {
+                    width: 400px;
+                    height: 454px;
+                }
+                @include for-desktop-up() {
+                    width: 440px;
+                    height: 520px;
+                }
+            }
+        }
+    }
+}
+
+.welcome {
+    text-align: center;
+    padding: 110px;
+    background-color: $light_beige_bg;
+    @include for-phone-only() {
+        padding: 20px;
+    }
+
+    .container {
+        .welcome__text {
+            margin: 15px;
+        }
+        .welcome__title {
+            @extend %main-title;
+            font-size: 30px;
+        }
+        .welcome__description {
+            @extend %main-text;
+        }
+        .welcome__link {
+            @extend %main-link;
+        }
+    }
+}
+
+.main__rings {
+    background-color: $light_beige_bg;
+    background-image: url(../img_Tanya/img_rings.jpg);
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+    background-size: 50%;
+    min-height: 576px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    @include for-phone-only() {
+        background-image: none;
+        min-height: 300px;
+    }
+    @include for-tablet-portrait-up() {
+        background-image: none;
+        min-height: 300px;
+    }
+    @include for-tablet-landscape-up() {
+        background-image: url(../img_Tanya/img_rings.jpg);
+        min-height: 400px;
+    }
+    @include for-desktop-up() {
+        min-height: 576px;
+    }
+
+    .rings__description {
+        min-width: 60%;
+        @include for-phone-only() {
+            min-width: 100%;
+        }
+        @include for-tablet-portrait-up() {
+            min-width: 100%;
+        }
+        @include for-tablet-landscape-up() {
+            min-width: 75%;
+        }
+
+        @include for-desktop-up() {
+            min-width: 60%;
+        }
+        .main__card_rings {
+            padding: 50px 25px;
+            background: white;
+            max-width: 600px;
+            .rings__main_title {
+                @extend %main-title;
+            }
+            .rings__main_text {
+                @extend %main-text;
+            }
+            .rings__main_link {
+                @extend %main-link;
+                margin: 15px;
+            }
+        }
+    }
+}
+
+.space {
+    height: 50px;
+    background-color: $light_beige_bg;
+    @include for-phone-only() {
+        display: none;
+    }
+
+    @include for-tablet-portrait-up() {
+        display: none;
+    }
+    @include for-tablet-landscape-up() {
+        display: block;
+    }
+}
+
+.main__earrings {
+    background-color: $light_beige_bg;
+    background-image: url(../img_Tanya/earrings_img.jpg);
+    background-repeat: no-repeat;
+    background-position: 90% 60%;
+    background-size: 50%;
+    min-height: 576px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    @include for-phone-only() {
+        background-image: none;
+        min-height: 300px;
+    }
+    @include for-tablet-portrait-up() {
+        background-image: none;
+        min-height: 300px;
+    }
+    @include for-tablet-landscape-up() {
+        background-image: url(../img_Tanya/earrings_img.jpg);
+        min-height: 400px;
+    }
+    @include for-desktop-up() {
+        min-height: 576px;
+    }
+
+    .earrings__description {
+        min-width: 60%;
+        display: flex;
+        justify-content: flex-end;
+        @include for-phone-only {
+            min-width: 100%;
+        }
+        @include for-tablet-portrait-up() {
+            min-width: 100%;
+        }
+        @include for-tablet-landscape-up() {
+            min-width: 75%;
+        }
+        @include for-tablet-landscape-up() {
+            min-width: 60%;
+        }
+        .main__card_earrings {
+            padding: 50px 25px;
+            background: white;
+            max-width: 600px;
+
+            // @include for-phone-only {
+            //     min-width: 100%;
+            // }
+            .earrings__main_title {
+                @extend %main-title;
+            }
+            .earrings__main_text {
+                @extend %main-text;
+            }
+            .earrings__main_link {
+                @extend %main-link;
+                margin: 15px;
+            }
+        }
+    }
+}
+
+.originality {
+    background-image: url(../img_Tanya/pexels-anastasia-shuraeva-5705495.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0% 60%;
+    min-height: 586px;
+    @include for-phone-only() {
+        display: none;
+    }
+    @include for-tablet-portrait-up() {
+        min-height: 400px;
+    }
+    @include for-desktop-up() {
+        min-height: 586px;
+    }
+
+    .originality__text {
+        text-align: center;
+        padding-top: 250px;
+        font-size: 60px;
+        color: white;
+        @include for-tablet-portrait-up() {
+            padding-top: 120px;
+        }
+        @include for-desktop-up() {
+            padding-top: 250px;
+        }
+    }
+}
+
+.about_me {
+    min-height: 600px;
+    background: linear-gradient(to right, $dark_beige_bg 50%, $light_beige_bg 50%);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    @include for-phone-only() {
+        background: $light_beige_bg;
+    }
+
+    @include for-tablet-portrait-up() {
+        background: $light_beige_bg;
+        padding-top: 40px;
+    }
+    @include for-tablet-landscape-up() {
+        background: linear-gradient(to right, $dark_beige_bg 50%, $light_beige_bg 50%);
+    }
+    @include for-tablet-landscape-up() {
+        flex-wrap: nowrap;
+    }
+    .img__about_me {
+        width: 480px;
+        height: 500px;
+        border: white solid 10px;
+        @include for-phone-only() {
+            width: 300px;
+            height: 100%;
+        }
+        @include for-tablet-landscape-up() {
+            width: 380px;
+            height: 450px;
+        }
+        @include for-desktop-up() {
+            width: 480px;
+            height: 500px;
+        }
+    }
+
+    .information__about_me {
+        height: 350px;
+        width: 470px;
+        padding: 50px;
+        padding-top: 100px;
+        @include for-phone-only() {
+            min-width: 300px;
+            padding: 0;
+        }
+
+        .title__about_me {
+            @extend %main-title;
+            font-size: 30px;
+            margin: 35px;
+        }
+
+        .text__about_me {
+            @extend %main-text;
+            margin: 35px;
+        }
+
+        .link__about_me {
+            @extend %main-link;
+            margin: 35px;
+        }
+    }
+}
+
+.end_cards {
+    min-height: 600px;
+    background-color: $light_beige_bg;
+    padding-top: 30px;
+
+    .p__title {
+        text-align: center;
+        color: $dark_beige_text;
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+    .title__end_cards {
+        text-align: center;
+        color: $dark_beige_text;
+        font-size: 40px;
+        padding-bottom: 20px;
+    }
+    .blocks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        // @include for-desktop-up(){
+        //     flex-wrap: nowrap;
+        // }
+        
+
+        .one_block {
+            width: 230px;
+            @include for-tablet-portrait-up() {
+                margin: 20px;
+            }
+            @include for-desktop-up(){
+                margin: 10px;
+            }
+
+            .img__end_cards {
+                width: 230px;
+                max-height: 500px;
+                border: white solid 5px;
+            }
+
+            .text__end_cards {
+                color: $dark_beige_text;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+            .link__end_cards {
+                text-decoration: none;
+                color: #402e2d;
+                &:hover{
+                    text-decoration:underline;
+                }
+
+                .fas {
+                    margin-left: 5px;
+                    color: #402e2d;
+                }
+            }
+        }
+    }
+}
+
+.main__footer {
+    background-color: $dark_beige_bg;
+    min-height: 360px;
+    padding: 20px;
+
+    .footer__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        .column {
+            text-align: center;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .footer__logo {
+                width: 200px;
+                height: 80px;
+                margin: 15px;
+            }
+            #footer__p {
+                font-size: 10px;
+            }
+            .footer__text {
+                color: white;
+                padding: 10px;
+            }
+
+            .footer__link {
+                padding: 10px;
+                color: white;
+                font-size: 12px;
+            }
+
+            form {
+                padding: 10px;
+                input {
+                    width: 135px;
+                    height: 30px;
+                    padding-left: 10px;
+                    border: white;
+                }
+                button {
+                    height: 32px;
+                    background-color: $light_beige_bg;
+                    color: $dark_beige_text;
+                    border: none;
+                    &:hover{
+                        background-color: $dark_beige_text;
+                        color: $light_beige_bg;
+                    }
+                }
+            }
+        }
+    }
+
+    hr {
+        max-width: 900px;
+    }
+
+    .footer__text2 {
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .5)
+}
+
+.modal__dialog {
+    max-width: 500px;
+    margin: 40px auto
+}
+
+.modal__content {
+    position: relative;
+    width: 100%;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    max-height: 80vh;
+    overflow-y: auto
+}
+
+.modal__close {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    font-size: 30px;
+    color: #000;
+    opacity: .5;
+    font-weight: 700;
+    border: none;
+    background-color: transparent;
+    cursor: pointer
+}
+
+.modal__title {
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase
+}
+
+.modal__input {
+    display: block;
+    margin: 20px auto 20px auto;
+    width: 280px;
+    height: 50px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    padding: 0 20px;
+    outline: 0
+}
+
+.modal .btn {
+    display: block;
+    width: 280px;
+    margin: 0 auto
+}
+
+.show {
+    display: block
+}
+
+.hide {
+    display: none
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}

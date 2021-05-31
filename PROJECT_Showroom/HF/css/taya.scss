@@ -1,0 +1,110 @@
+@import 'reset.scss';
+
+body{
+    font-family: 'Tenor Sans', sans-serif;
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.breadcrumbs {
+    padding: 30px 0;
+    a, span {
+        text-decoration: none;
+        color: #575757;
+        margin-right: 10px
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    
+}
+section.catalog{
+    .catalog__container{
+        
+    }
+    .catalog__title{
+        font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 20px;
+
+    }
+    .catalog__row{
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 70px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .catalog__item{
+        position: relative;
+        transition: .5s;
+        width: 30%;
+        margin-bottom: 20px;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+   
+    .catalog-item__img{
+        width: 100%;
+        
+        height: 400px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .catalog-item__h2{
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        margin: 10px 0;
+    }
+    .catalog-item__info{
+        display: flex;
+        
+    }
+    .catalog-item__material{
+        padding-right: 20px;
+    }
+    .catalog-item__price{
+
+    }
+    .catalog-item__price span{
+        text-decoration: line-through;
+    }
+    .catalog-item__sale{
+        background-color: white;
+        color: black;
+        position: absolute;
+        top: 340px;
+        right: 15px;
+        padding: 7px 15px;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+@media(max-width: 768px){
+    section.catalog .catalog__item{
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+@media(max-width: 480px){
+    section.catalog .catalog__item{
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+    .catalog__title{
+        margin-top: 10px;
+        margin-left: 11px;
+    }
+}

@@ -1,0 +1,189 @@
+
+.body_header_nav{
+    box-shadow: 5px 4px 5px rgb(233, 223, 223);
+    padding: 20px 0;  
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    .header_nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .header_nav_logo{
+            // padding-top: 10px;
+            // margin-bottom: 20px;
+        }
+
+        .header_nav_text ul {
+            display: flex;
+            align-items: center;
+        }
+        .header_nav_text li{
+            padding-left: 20px;
+        }
+        .header_nav_text li a{
+            font-size: 18px;
+            font-family: "Tenor Sans";
+            color: rgb(51, 47, 47);
+            text-decoration: none;
+        }
+        .header_nav_text li a:hover{
+            color: black;
+            border-bottom: 1px rgb(51, 47, 47) solid;
+        }
+        .header_nav_icons ul{
+            display: flex;
+            align-items: center;
+        }
+        .header_nav_icons li{
+            padding-left: 15px;
+        }
+        .header_nav_call a{
+            font-size: 18px;
+            font-family: "Tenor Sans";
+            color: rgb(51, 47, 47);
+            text-decoration: none;  
+
+            padding: 10px 20px;
+
+            border: 2px solid rgb(51, 47, 47);
+            border-radius: 17px;
+            transition: 0.3s ease-in-out;
+        }
+        .header_nav_call a:hover{
+            background-color: rgb(51, 47, 47);
+            color: white;
+        }
+    }
+}
+
+
+.footer{
+    margin-top: 50px; //ОБЯЗАТЕЛЬНО УБЕРИТЕ ЭТО :D
+    .footer_mailing{
+        max-width: 1200px;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        & p{
+            font-family: "Tenor Sans";
+            color: rgb(51, 47, 47);
+        }
+
+        .input_x_button{
+            display: flex;
+            align-items: center;
+        }
+
+    }
+    .footer_button a{
+        text-decoration: none; 
+        font-family: "Tenor Sans";
+        background-color: rgb(51, 47, 47);
+        border: 2px solid rgb(51, 47, 47);
+        color: white;
+        padding:11px 40px;
+        transition: 0.3s ease-in-out;
+        &:hover{
+            background-color: white;
+            color: rgb(51, 47, 47);
+        }
+    }
+    
+    .footer_input input{
+        width: 450px;
+        height: 40px;
+        font-family: "Tenor Sans";
+        border: 1px solid rgb(204, 199, 199);
+        &::placeholder{
+            color: rgb(204, 199, 199);
+            &:active{
+                color: rgb(51, 47, 47);
+            }
+        }
+
+        margin-right: 90px;
+    }
+    .footer_info{
+        display: flex;
+        align-items: center;
+
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+    .footer_nav{
+        display: flex;
+        margin-top: 40px;
+    }
+    .footer_image{
+        padding-top: 50px;
+    }
+    .footer_nav ul{
+        display: flex;
+    }
+    .footer_nav li{
+        margin-left: 15px;
+    }
+    .footer_nav li a{
+        font-size: 14px;
+        font-family: "Tenor Sans";
+        color: rgb(51, 47, 47);
+        text-decoration: none;
+    }
+    .footer_tel{
+        margin-right: 200px;
+    }
+    .footer_tel p{
+        font-family: "Tenor Sans";
+        color: rgb(51, 47, 47);
+        font-size: 18px;
+    }
+    .footer_adress p{
+        font-family: "Tenor Sans";
+        color: rgb(51, 47, 47);
+        font-size: 15px;
+        padding-bottom: 5px;
+    }
+    .footer_adress span p{
+        color: grey ;
+    }
+
+    // .footer_second_nav{
+    //     .footer_second_nav ul{
+    //         display: flex;  
+    //     }
+    //     .footer_second_nav li a{
+    //         color: green;
+    //     }
+    // }
+}
+
+.footer_second_nav{
+    margin-top: 40px;
+}
+.footer_second_nav ul{
+    display: flex;  
+}
+.footer_second_nav li{
+    margin-right: 20px;
+}
+.footer_second_nav a{
+    font-size: 18px;
+    font-family: "Tenor Sans";
+    color: rgb(51, 47, 47);
+    text-decoration: none;
+}
+hr {
+    margin-top: 30px;
+    border: none;
+    background-color: rgb(231, 222, 222);
+    color: rgb(197, 189, 189);
+    height: 2px;
+}
